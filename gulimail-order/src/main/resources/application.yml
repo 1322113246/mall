@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.52.128:3306/gulimail_oms
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: gulimail-order
+  thymeleaf:
+    cache: false
+  redis:
+    host: 192.168.52.128
+  session:
+    store-type: redis
+    timeout: 30m
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  rabbitmq:
+    host: 192.168.52.128
+    port: 5672
+    virtual-host: /
+    publisher-confirms: true
+    publisher-returns: true
+    template:
+      mandatory: true
+    listener:
+      simple:
+        acknowledge-mode: manual
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+server:
+  port: 9000

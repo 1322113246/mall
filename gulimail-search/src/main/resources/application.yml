@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: gulimail-search
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  thymeleaf:
+    cache: false
+  redis:
+    host: 192.168.52.128
+  session:
+    store-type: redis
+server:
+  port: 40000
